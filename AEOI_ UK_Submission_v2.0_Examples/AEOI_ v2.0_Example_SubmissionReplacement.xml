@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AEOIUKSubmissionFIReport xmlns="http://hmrc.gov.uk/AEOIUKSubmissionFIReport" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SchemaVersion="2.0" xsi:schemaLocation="http://hmrc.gov.uk/AEOIUKSubmissionFIReport uk_aeoi_submission_v2.0.xsd">
+	<!-- H M  R e v e n u e  &  C u s t o m s  -  A E O I  v 2 . 0  -  S u b m i s s i o n   R e p l a c e m e n t
+  |
+  |   This is an example of what we would expect a SubmissionReplacement message to look like.
+  |
+  |   Please note THIS IS NOT THE ONLY VALID SubmissionReplacement entities and occurrances.
+  |   You should always validate your XML instance file against current HMRC AEOI UK 
+  |   Submission schema and use the latest Schema User Guide for reference.
+  |
+  |   Comments like this one throughout the XML should not be included in your final
+  |   submission.
+  |
+  | -->
+	<MessageData>
+		<MessageCategory>NewSubmission</MessageCategory>
+		<XMLTimeStamp>2016-07-22T12:11:00Z</XMLTimeStamp>
+		<AEOIUserId>1234567890</AEOIUserId>
+	</MessageData>
+	<Submission>
+		<ReportingPeriod>2015-12-31</ReportingPeriod>
+		<Replacement>
+			<MessageRef>12345678902016082313392REP</MessageRef>
+			<ReplacedMessageRef>12345678902016072212110NEW</ReplacedMessageRef>
+			<!-- This is the MessageRef of the Message that you want to Replace -->
+		</Replacement>
+		<FIReturn>
+			<FIReturnAction>
+				<FIReturnRef>ABC123456789020161231REP</FIReturnRef>
+				<Action>New</Action>
+			</FIReturnAction>
+			<FIRegisterId>ABC1234567890</FIRegisterId>
+			<DueDiligenceInd>Yes</DueDiligenceInd>
+			<ThresholdInd>Yes</ThresholdInd>
+			<InsuranceElection>No</InsuranceElection>
+			<DormantAccElection>No</DormantAccElection>
+			<AccountData>
+				<AccountAction>
+					<AccountRef>ABC1234567890ACCOUNTNUM99REP</AccountRef>
+					<Action>New</Action>
+				</AccountAction>
+				<AccountNumber AccountNumberType="Other">ACCOUNTNUM99</AccountNumber>
+				<AccountBalance currCode="USD">50001</AccountBalance>
+				<AccountClosedInd>0</AccountClosedInd>
+				<UndocumentedAccountInd>0</UndocumentedAccountInd>
+				<DormantAccountInd>0</DormantAccountInd>
+				<AccountHolderType>Reportable Person (Individual)</AccountHolderType>
+				<Person>
+					<FirstName>a</FirstName>
+					<LastName>a</LastName>
+					<Address>
+						<City>a</City>
+						<CountryCode>AF</CountryCode>
+					</Address>
+					<HolderTaxInfo>
+						<ResCountryCode>AF</ResCountryCode>
+					</HolderTaxInfo>
+				</Person>
+			</AccountData>
+		</FIReturn>
+	</Submission>
+</AEOIUKSubmissionFIReport>

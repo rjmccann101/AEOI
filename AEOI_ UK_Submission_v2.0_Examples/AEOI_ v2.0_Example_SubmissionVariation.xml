@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AEOIUKSubmissionFIReport xmlns="http://hmrc.gov.uk/AEOIUKSubmissionFIReport" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SchemaVersion="2.0" xsi:schemaLocation="http://hmrc.gov.uk/AEOIUKSubmissionFIReport uk_aeoi_submission_v2.0.xsd">
+	<!-- H M  R e v e n u e  &  C u s t o m s  -  A E O I  v 2 . 0  E x a m p l e   -  S u b m i s s i o n   V a r i a t i o n 
+  |
+  |   This is an example of what we would expect a SubmissionVariation message to look like.
+  |   
+  |   Please note THIS IS NOT THE ONLY VALID SubmissionVariation entities and occurrances.
+  |   You should always validate your XML instance file against current HMRC AEOI UK 
+  |   Submission schema and use the latest Schema User Guide for reference.
+  |
+  |   Comments like this one throughout the XML should not be included in your final
+  |   submission.
+  |
+  | -->
+	<MessageData>
+		<MessageCategory>SubmissionVariation</MessageCategory>
+		<XMLTimeStamp>2016-07-22T13:49:47Z</XMLTimeStamp>
+		<AEOIUserId>1234567890</AEOIUserId>
+	</MessageData>
+	<Submission>
+		<ReportingPeriod>2015-12-31</ReportingPeriod>
+		<MessageRef>12345678902016072212110NEW</MessageRef>
+		<!-- Already submitted FI Return, add 1 extra Account -->
+		<FIReturn>
+			<FIReturnAction>
+				<FIReturnRef>ABC123456789020151231ORIG</FIReturnRef>
+				<Action>Variation</Action>
+			</FIReturnAction>
+			<FIRegisterId>ABC1234567890</FIRegisterId>
+			<DueDiligenceInd>Yes</DueDiligenceInd>
+			<ThresholdInd>No</ThresholdInd>
+			<InsuranceElection>No</InsuranceElection>
+			<DormantAccElection>No</DormantAccElection>
+			<AccountData>
+				<AccountAction>
+					<AccountRef>ABC1234567890ACCOUNTNUM2NEW</AccountRef>
+					<Action>New</Action>
+				</AccountAction>
+				<AccountNumber>ACCOUNTNUM2</AccountNumber>
+				<AccountBalance currCode="GBP">0.00</AccountBalance>
+				<AccountHolderType>Reportable Person (Individual)</AccountHolderType>
+				<Person>
+					<FirstName>a</FirstName>
+					<LastName>a</LastName>
+					<Address>
+						<City>a</City>
+						<CountryCode>AF</CountryCode>
+					</Address>
+					<HolderTaxInfo>
+						<ResCountryCode>AF</ResCountryCode>
+					</HolderTaxInfo>
+				</Person>
+			</AccountData>
+		</FIReturn>
+	</Submission>
+</AEOIUKSubmissionFIReport>

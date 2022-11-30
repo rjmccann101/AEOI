@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AEOIUKSubmissionFIReport xmlns="http://hmrc.gov.uk/AEOIUKSubmissionFIReport" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SchemaVersion="2.0" xsi:schemaLocation="http://hmrc.gov.uk/AEOIUKSubmissionFIReport uk_aeoi_submission_v2.0.xsd">
+	<!-- H M  R e v e n u e  &  C u s t o m s  -  A E O I  v 2 . 0  E x a m p l e   -  V o i d  S u b m i s s i o n
+  |
+  |   This is an example of what we would expect a VoidSubmission message to look like.
+  |  
+  |   You should always validate your XML instance file against current HMRC AEOI UK
+  |   Submission schema and use the latest Schema User Guide for reference.
+  |
+  |   Comments like this one throughout the XML should not be included in your final
+  |   submission.
+  |
+  | -->
+	<MessageData>
+		<MessageCategory>SubmissionVoid</MessageCategory>
+		<XMLTimeStamp>2016-07-22T14:26:47Z</XMLTimeStamp>
+		<AEOIUserId>1234567890</AEOIUserId>
+	</MessageData>
+	<VoidSubmission>
+		<MessageRef>12345678902016072212110VOID</MessageRef>
+		<VoidMessageRef>12345678902016072212110ORIG</VoidMessageRef>
+		<!-- This is the MessageRef of the Message that you want to Void -->
+	</VoidSubmission>
+</AEOIUKSubmissionFIReport>

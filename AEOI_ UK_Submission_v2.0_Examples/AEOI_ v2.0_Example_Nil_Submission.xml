@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AEOIUKSubmissionFIReport xmlns="http://hmrc.gov.uk/AEOIUKSubmissionFIReport" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SchemaVersion="2.0" xsi:schemaLocation="http://hmrc.gov.uk/AEOIUKSubmissionFIReport uk_aeoi_submission_v2.0.xsd">
+	<!-- H M  R e v e n u e  &  C u s t o m s  -  A E O I  v 2 . 0  E x a m p l e   -  N I L  S u b m i s s i o n
+  |
+  |   This is an example of what we would expect a VoidSubmission message to look like.
+  |   
+  |   You should always validate your XML instance file against current HMRC AEOI UK
+  |   Submission schema and use the latest Schema User Guide for reference.
+  |
+  |   Comments like this one throughout the XML should not be included in your final
+  |   submission.
+  |
+  | -->
+	<MessageData>
+		<MessageCategory>NewSubmission</MessageCategory>
+		<XMLTimeStamp>2016-07-22T13:14:10Z</XMLTimeStamp>
+		<AEOIUserId>1234567890</AEOIUserId>
+	</MessageData>
+	<Submission>
+		<ReportingPeriod>2015-12-31</ReportingPeriod>
+		<MessageRef>12345678902016072212131401</MessageRef>
+		<FIReturn>
+			<FIReturnAction>
+				<FIReturnRef>ABC123456789020151231001</FIReturnRef>
+				<Action>New</Action>
+			</FIReturnAction>
+			<FIRegisterId>ABC1234567890</FIRegisterId>
+			<DueDiligenceInd>Yes</DueDiligenceInd>
+			<ThresholdInd>Yes</ThresholdInd>
+			<InsuranceElection>No</InsuranceElection>
+			<DormantAccElection>No</DormantAccElection>
+			<NilReturn>Yes</NilReturn>
+		</FIReturn>
+	</Submission>
+</AEOIUKSubmissionFIReport>
