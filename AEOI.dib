@@ -1,0 +1,7 @@
+#!markdown
+
+#Introduction
+
+The Automatic Exchange of Information, AEOI, is an agreement by the UK to exchange tax information with other countries. The details of  AEOI can be found here: https://www.gov.uk/guidance/automatic-exchange-of-information-introduction on the HMRC website.
+
+This notebook is an attempt to create an F# Domain Model that supports the data specified by HMRC for AEOI reporting and which is easily serializable to XML in a format that meets the XML Schema specified.
