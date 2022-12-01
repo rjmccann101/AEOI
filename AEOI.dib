@@ -1,7 +1,62 @@
 #!markdown
 
-#Introduction
+# Introduction
 
 The Automatic Exchange of Information, AEOI, is an agreement by the UK to exchange tax information with other countries. The details of  AEOI can be found here: https://www.gov.uk/guidance/automatic-exchange-of-information-introduction on the HMRC website.
 
 This notebook is an attempt to create an F# Domain Model that supports the data specified by HMRC for AEOI reporting and which is easily serializable to XML in a format that meets the XML Schema specified.
+
+#!markdown
+
+## FPrimitive
+
+The FPrimitive library (see: https://github.com/stijnmoreels/FPrimitive) will be used by the model to provide specifications for the elements of the data model.
+
+#!fsharp
+
+#r "nuget: FPrimitive"
+
+#!markdown
+
+### Positive Integer
+A type that only allows positive integer numbers.
+
+#!fsharp
+
+type PositiveInt = 
+  private PositiveInt of int with
+    static member create x =
+      if x >= 0 then Ok (PositiveInt x)
+      else Error "integer should be greater than or equal to zero"
+
+#!markdown
+
+### Positive Decimal
+A type that only allows positive decimal numbers.
+
+#!fsharp
+
+type PositiveDecimal =
+    private PositiveDecimal of decimal with
+        static member create x =
+            if x >= 0.0m then Ok (PositiveDecimal x)
+            else Error "decimal should be greater than or equal to zero"
+
+#!fsharp
+
+type MessageCategory =
+| NewSubmission
+| SubmissionVariation
+| SubmissionReplacement
+| SubmissionVoid
+
+type MessageData = {
+    messageCategory : MessageCategory
+}
+
+#!fsharp
+
+type AEOIUKSubmissionFIReport = {
+    schemaVersion : PositiveDecimal
+    messageData : MessageCategory
+}
