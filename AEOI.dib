@@ -16,6 +16,10 @@ The FPrimitive library (see: https://github.com/stijnmoreels/FPrimitive) will be
 
 #r "nuget: FPrimitive"
 
+#!fsharp
+
+open FPrimitive
+
 #!markdown
 
 ### Positive Integer
@@ -23,24 +27,55 @@ A type that only allows positive integer numbers.
 
 #!fsharp
 
-type PositiveInt = 
+type PositiveInt =
   private PositiveInt of int with
     static member create x =
-      if x >= 0 then Ok (PositiveInt x)
-      else Error "integer should be greater than or equal to zero"
+      Spec.def 
+      |> Spec.greaterThanOrEqual 0 "integer should be greater than zero"
+      |> Spec.createModel PositiveInt x
 
 #!markdown
 
-### Positive Decimal
-A type that only allows positive decimal numbers.
+## MessageReference
+This is the senders unique reference for the message and it must be between 24 and 36 characters long
 
 #!fsharp
 
-type PositiveDecimal =
-    private PositiveDecimal of decimal with
+type MessageReference =
+    private MessageReference of string with 
         static member create x =
-            if x >= 0.0m then Ok (PositiveDecimal x)
-            else Error "decimal should be greater than or equal to zero"
+            Spec.def
+            |> Spec.lengthBetween 24 36 "Message Reference must be between 24 and 36 characters long"
+            |> Spec.createModel MessageReference x
+
+#!markdown
+
+### Payment Amount
+The amount of money paid from an account.  This value must be greater tha 0.01
+
+#!fsharp
+
+type PaymentAmount =
+    private PaymentAmount of decimal with
+        static member create x =
+            Spec.def
+            |> Spec.greaterThan 0.01m "Payment amount should be greater than or equal to 0.01"
+            |> Spec.createModel PaymentAmount x
+
+#!markdown
+
+## Date of Birth
+When submitting a date of birth as part of the AEOI submission the date must be between 01/01/1900 and the current dat
+
+#!fsharp
+
+type BirthDate =
+    private BirthDate of DateTime with 
+        static member create x =
+            Spec.def
+            |> Spec.greaterThanOrEqual DateTime.Now "Birth date should be after 1900/01/01"
+            |> Spec.lessThan (DateTime(1900,1,1)) "Birth date should be before current date"
+            |> Spec.createModel BirthDate x
 
 #!fsharp
 
